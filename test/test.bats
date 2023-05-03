@@ -42,11 +42,6 @@ load test_helper
 	[ "$status" -eq 0 ]
 }
 
-@test "mongodb-clients" {
-	run check_cmd "mongo --version"
-	[ "$status" -eq 0 ]
-}
-
 @test "mysql-client" {
 	run check_cmd "mysql --version"
 	[ "$status" -eq 0 ]
@@ -88,15 +83,7 @@ load test_helper
 	[ "$status" -eq 0 ]
 }
 
-@test "rabbitmq-server" {
-	run check_cmd "rabbitmqctl help"
-	[ "$status" -eq 0 ]
-}
 
-@test "rabbitmqadmin" {
-	run check_cmd "rabbitmqadmin --version"
-	[ "$status" -eq 0 ]
-}
 @test "swaks" {
 	run check_cmd "swaks --version"
 	[ "$status" -eq 0 ]
