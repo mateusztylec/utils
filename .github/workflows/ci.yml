@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   main:
@@ -36,8 +36,8 @@ jobs:
         run: bats test/test.bats
 
       - name: Build and push production Docker image
-        if: ${{ github.ref == 'refs/heads/master' }}
+        # if: ${{ github.ref == 'refs/heads/master' }}
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: arunvelsriram/utils:latest
+          tags: mateusztylec/utils:latest
